@@ -22,7 +22,7 @@ router.post("/process/:uid", async (req, res) => {
         };
 
     // 2️⃣ Apply transaction
-    state.closing_balance += txn.amount;
+    state.closing_balance += txn.amount;https://flex-mi.onrender.com
 
     if (txn.amount > 0) {
       state.daily_inflow += txn.amount;
@@ -37,7 +37,7 @@ router.post("/process/:uid", async (req, res) => {
     });
 
     // 4️⃣ TRIGGER EMI DECISION (🔥 THIS WAS MISSING)
-    await fetch(`http://localhost:5000/api/emi/run/${uid}`, {
+    await fetch(`https://flex-mi.onrender.com/api/emi/run/${uid}`, {
       method: "POST"
     });
 
