@@ -13,7 +13,7 @@ export default function ConnectBank() {
     setLoading(true);
 
     // 1️⃣ Trigger backend EMI engine
-    await fetch(`http://localhost:5000/api/emi/run/${user.uid}`, {
+    await fetch(`https://flex-mi.onrender.com/api/emi/run/${user.uid}`, {
       method: "POST"
     });
 
