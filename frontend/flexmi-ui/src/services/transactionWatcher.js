@@ -2,7 +2,7 @@ import bankData from "../data/demoBankAccount.json";
 
 export async function runTransactionWatcher(userId) {
   // 1️⃣ Get pointer
-  const metaRes = await fetch(`http://localhost:5000/api/meta/${userId}`);
+  const metaRes = await fetch(`https://flex-mi.onrender.com/api/meta/${userId}`);
   const meta = await metaRes.json();
 
   const lastIndex =
@@ -20,7 +20,7 @@ export async function runTransactionWatcher(userId) {
 
   // 2️⃣ Process ONE transaction
   await fetch(
-    `http://localhost:5000/api/transaction/process/${userId}`,
+    `https://flex-mi.onrender.com/api/transaction/process/${userId}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -29,7 +29,7 @@ export async function runTransactionWatcher(userId) {
   );
 
   // 3️⃣ Move pointer
-  await fetch(`http://localhost:5000/api/meta/${userId}`, {
+  await fetch(`https://flex-mi.onrender.com/api/meta/${userId}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
