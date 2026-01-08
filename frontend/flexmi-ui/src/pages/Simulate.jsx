@@ -40,7 +40,7 @@ export default function Simulate() {
   const updateState = async () => {
     setLoading(true);
 
-    await fetch(`http://localhost:5000/api/simulate/${user.uid}`, {
+    await fetch(`https://flex-mi.onrender.com/api/simulate/${user.uid}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -51,7 +51,7 @@ export default function Simulate() {
       })
     });
 
-    await fetch(`http://localhost:5000/api/emi/run/${user.uid}`, {
+    await fetch(`https://flex-mi.onrender.com/api/emi/run/${user.uid}`, {
       method: "POST"
     });
 
